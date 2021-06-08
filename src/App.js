@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useState,useEffect }from 'react';
+import './post.css';
+import Posts from "./components/Posts";
+import Pagination from "./components/Pagination";
 
-function App() {
-  return (
+
+function App(){
+
+const [data,setData]= useState([]); 
+const [error,setError]=useState(null);
+const [loading,setLoading]=useState(true);
+const [url, setUrl] = useState("59b3f0b0100000e30b236b7e")
+
+
+  useEffect(()=>{ 
+ fetch(`http://www.mocky.io/v2/${url}`)
+ .then(response=>{
+   if(response.ok){
+     return response.json()
+   }
+   throw response;
+ })
+ .then(data=>{
+     setData(data.posts);
+   })
+
+ .catch(error=>{
+   console.error("Error in Fetching",error);
+   setError(error);
+ })
+ .finally(()=>{
+   setLoading(false);
+ })
+ 
+  },[url])
+  // Page startup message
+  if(loading)return <h1 className="message">Loading...</h1>
+  if(error) return <h1 className="message">Oops! Something went wrong.</h1>
+
+  // To switch between the pages
+
+  const paginate = (pageNumber) => {
+    if(pageNumber === 1) {
+      setUrl("59b3f0b0100000e30b236b7e")
+     
+    }
+    else if(pageNumber === 2) {
+      setUrl("59ac28a9100000ce0bf9c236")
+    }
+    else if(pageNumber === 3) {
+      setUrl("59ac293b100000d60bf9c239")
+    }
+  }
+
+  return(
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Posts posts={data}/>
+      <Pagination paginate = {paginate}/>
+
     </div>
-  );
+  )
 }
 
 export default App;

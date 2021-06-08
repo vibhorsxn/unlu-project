@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital@1&display=swap');
+/* For the individual post section */
+body{
+    background-color: saddlebrown;
+}
+
+/* Main Post section */
+.post{
+    border: 2px solid black;
+    position: relative;
+    margin:10px;
+    text-align: center;
+    background-color: rgb(246, 169, 80);
+}
+
+/* Thumbnail image */
+
+.profile{
+    margin-top: 10px;
+    height: 250px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+.ename{
+    font-family: 'Alegreya Sans', sans-serif;
+
+}
+
+/*Downsheet deatils button  */
+
+.details{
+    border: 1px solid black;
+    box-shadow: 10px 1px 5px rgb(241, 126, 49);
+    border-radius: 5px;
+    height: 250px;
+    width: 260px;
+    position:absolute;
+    top: 3%;
+    left: 40%;
+    background-color: rgb(218, 137, 70);
+    transition: all 1s ease-in-out;
+}
+
+button{
+    border:none;
+}
+
+/* Pagination */
+
+.page-no {
+    text-align: center;
+}
+
+
+.page-no button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin:10px;
+    background-color: slategray;
+   align-content: center;
+
+}
+
+.page-no button:hover{
+    background-color: steelblue;
+}
+
+/* Page startup message */
+
+.message{
+    color:wheat;
+    text-align: center;
+    letter-spacing: 2px;
+}
