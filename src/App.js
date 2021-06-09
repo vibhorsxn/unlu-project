@@ -55,7 +55,7 @@ const [url, setUrl] = useState("59b3f0b0100000e30b236b7e")
   return(
     
     <div className="App">
-      
+      <h1 className="heading">All Posts</h1>
       <Posts posts={data}/>
       <Pagination paginate = {paginate}/>
 
