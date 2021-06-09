@@ -15,8 +15,9 @@ function Post({name, like, view, share, date, url}) {
         setShow(!show);  
     }
     return (
-        
+    
         <div className="post">
+            
             {console.log(show)}
             <img className="profile" alt="profile" src={url}/>
             
@@ -25,7 +26,7 @@ function Post({name, like, view, share, date, url}) {
                 <i class="fas fa-chevron-circle-up"></i>
             </button>
                 <h3>
-                    Event name {name}
+                    Event name: {name}
                 </h3>
                 
                   
@@ -46,6 +47,7 @@ function Post({name, like, view, share, date, url}) {
 
             }
         </div>
+   
     )
 
 }

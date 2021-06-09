@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital@1&display=swap');
 /* For the individual post section */
 body{
-    background-color: saddlebrown;
+    /* background-color: saddlebrown; */
+    background: linear-gradient(rgb(165, 80, 0),rgb(216, 119, 50)
+    );
+}
+
+.heading{
+    margin-bottom: -2px;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 /* Main Post section */
 .post{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     position: relative;
     margin:10px;
     text-align: center;
     background-color: rgb(246, 169, 80);
+    border-radius: 5px;
 }
 
 /* Thumbnail image */
@@ -24,7 +33,6 @@ body{
 
 .ename{
     font-family: 'Alegreya Sans', sans-serif;
-
 }
 
 /*Downsheet deatils button  */
@@ -44,6 +52,8 @@ body{
 
 button{
     border:none;
+    cursor: pointer;
+    background-color: rgb(246, 169, 80);
 }
 
 /* Pagination */
@@ -60,11 +70,15 @@ button{
     margin:10px;
     background-color: slategray;
    align-content: center;
+   font-size: medium;
+   font-weight: bold;
+   
 
 }
 
 .page-no button:hover{
     background-color: steelblue;
+    cursor: pointer;
 }
 
 /* Page startup message */

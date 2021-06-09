@@ -15,8 +15,6 @@ const Posts = ({posts}) => {
         like={post.likes} 
         share={post.shares} 
         
-        
-        
         /> 
 
       } )  
