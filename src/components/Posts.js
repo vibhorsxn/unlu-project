@@ -5,6 +5,7 @@ const Posts = ({posts}) => {
     return(
         <div>
              {
+               //mapping throught the each array present in {Data}
       posts.map((post)=>{
     
         return <Post key={post.id}

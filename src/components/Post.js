@@ -1,5 +1,6 @@
 import React, {useState,useEffect}from 'react';
 
+//Destructuring the props
 
 function Post({name, like, view, share, date, url}) {
 
@@ -17,7 +18,7 @@ function Post({name, like, view, share, date, url}) {
     return (
     
         <div className="post">
-            
+    
             {console.log(show)}
             <img className="profile" alt="profile" src={url}/>
             
@@ -25,6 +26,7 @@ function Post({name, like, view, share, date, url}) {
             <button onClick = {handleClick}>
                 <i class="fas fa-chevron-circle-up"></i>
             </button>
+            
                 <h3>
                     Event name: {name}
                 </h3>
@@ -33,7 +35,8 @@ function Post({name, like, view, share, date, url}) {
             </div>
 
             {show &&             <div className="details">
-                    <p> <i class="fas fa-calendar-day"></i> {date} </p>
+                {/* toLocaleString:date & time, toString: date& time GMT, toLocaleTimeString:time only */}
+                    <p> <i class="fas fa-calendar-day"></i> {new Date(date).toLocaleDateString()} </p>
                 
                 <div className="view">
                     <p> <i class="fas fa-eye"></i> {view} </p>
